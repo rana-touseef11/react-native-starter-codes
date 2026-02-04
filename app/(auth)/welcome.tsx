@@ -1,10 +1,12 @@
-import { Text } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+// import { Text } from "react-native";
+import { ThemedSafeAreaView } from "@/components/theme";
+import { Button, Text } from "react-native-paper";
 
 const WelcomeScreen = () => {
-  return (<SafeAreaView>
+  return (<ThemedSafeAreaView>
     <Text>Welcome</Text>
-  </SafeAreaView>)
+    <Button mode="contained-tonal">Save</Button>
+  </ThemedSafeAreaView>);
 }
 
 export default WelcomeScreen;
