@@ -1,0 +1,8 @@
+{
+  "auth": {
+    "welcome": "Welcome To {{name}}",
+    "entered": "You entered {{count}} times",
+    "entered_one": "You entered {{count}} time",
+    "Save": "Save"
+  }
+}
