@@ -1,13 +1,13 @@
-import { Text } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { ThemedSafeAreaView } from "@/components/theme";
+import { Text } from "react-native-paper";
 
 const HomeScreen = () => {
   return (
-    <SafeAreaView>
+    <ThemedSafeAreaView>
       <Text>
-        HI
+        Home
       </Text>
-    </SafeAreaView>
+    </ThemedSafeAreaView>
   )
 }
 

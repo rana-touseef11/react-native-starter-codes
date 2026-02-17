@@ -10,7 +10,7 @@ import { StyleSheet, useWindowDimensions, View } from "react-native";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Button, Text, TextInput } from "react-native-paper";
 
-const LoginScreen = () => {
+const RegisterScreen = () => {
   const { t } = useTranslation();
 
   const { height: screenHeight } = useWindowDimensions();
@@ -19,11 +19,11 @@ const LoginScreen = () => {
   // 👇 true ONLY when there is empty vertical space
   const shouldCenter = contentHeight > 0 && contentHeight < screenHeight;
 
-  const handleRegister = () => {
-    router.replace(paths.auth.jwt.signUp);
+  const handleLogin = () => {
+    router.replace(paths.auth.jwt.logIn);
   }
 
-  return (<ThemedSafeAreaView className="p-4">
+  return (<ThemedSafeAreaView className="p-5">
     <KeyboardAwareScrollView enableOnAndroid keyboardShouldPersistTaps="handled"
       extraScrollHeight={20}
       contentContainerStyle={[
@@ -34,18 +34,28 @@ const LoginScreen = () => {
     >
       <View className="gap-2">
         <View className="items-center">
-          <Text className="text-3xl">{t('auth.login.title')}</Text>
+          <Text className="text-3xl">{t('auth.register.title')}</Text>
         </View>
         <Spacer />
+        <View className="flex-row gap-3">
+          <TextInput style={{ flex: 1 }} mode="outlined" label={t('auth.register.First_Name')} />
+          <TextInput style={{ flex: 1 }} mode="outlined" label={t('auth.register.Last_Name')} />
+        </View>
+        <TextInput mode="outlined" label={t('auth.register.Phone')} />
         <TextInput mode="outlined" label={t('auth.common.Email')} keyboardType="email-address" />
         <TextInput mode="outlined" label={t('auth.common.Password')} secureTextEntry />
+        {/* <TextInput mode="outlined" label={t('auth.register.City')} />
+        <TextInput mode="outlined" label={t('auth.register.State')} />
+        <TextInput mode="outlined" label={t('auth.register.Country')} />
+        <TextInput mode="outlined" label={t('auth.register.Post_Code')} keyboardType="number-pad" />
+        <TextInput mode="outlined" label={t('auth.register.Address')} /> */}
       </View>
       <Spacer />
-      <MyButton mode="contained">{t('auth.common.Login')}</MyButton>
+      <MyButton mode="contained">{t('auth.common.Sign_Up')}</MyButton>
       <Spacer height={themeConfig.size.md} />
       <View className="flex-row justify-center items-center">
-        <Text>{t("auth.login.Account?")}</Text>
-        <Button onPress={handleRegister}>{t('auth.common.Sign_Up')}</Button>
+        <Text>{t("auth.register.Account?")}</Text>
+        <Button onPress={handleLogin}>{t('auth.common.Login')}</Button>
       </View>
     </KeyboardAwareScrollView>
   </ThemedSafeAreaView>)
@@ -60,4 +70,4 @@ const styles = StyleSheet.create({
   // },
 });
 
-export default LoginScreen;
+export default RegisterScreen;

@@ -9,7 +9,15 @@ export const buildTheme = (mode: Mode) => {
 
   return {
     ...base,
+    roundness: themeConfig.radius.borderRadius,
     dark: isDark,
+    // components: {
+    //   Button: {
+    //     style: {
+    //       borderRadius: 14,
+    //     },
+    //   },
+    // },
     colors: {
       ...base.colors,
 
