@@ -41,7 +41,7 @@ export const buildTheme = (mode: Mode) => {
       // onPrimary: "#FFFFFF",
 
       // BORDERS
-      outline: themeConfig.palette.primary.light,
+      outline: isDark ? themeConfig.palette.primary.lighter : themeConfig.palette.primary.light,
 
       // BUTTON
       // button: themeConfig.palette.primary.main,

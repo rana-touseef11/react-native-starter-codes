@@ -12,7 +12,7 @@ const MyButton = ({ style, children, ...props }: MyButtonProps) => {
   return (
     <Button
       {...props}
-      style={[{ borderRadius: themeConfig.radius.borderRadius, paddingBlock: 4 }, style]}
+      style={[{ borderRadius: themeConfig.radius.borderRadius }, style]}
     >
       {children}
     </Button>
