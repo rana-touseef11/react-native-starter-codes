@@ -1,22 +1,23 @@
-import { buildTheme } from "@/components/theme";
+import { useCustomAppTheme } from "@/components/theme/useCustomAppTheme";
 import "@/i18n/index";
+import { ThemeProvider } from "@react-navigation/native";
 import { Stack } from "expo-router";
-import { useColorScheme } from "react-native";
-import { PaperProvider } from 'react-native-paper';
+import { PaperProvider } from "react-native-paper";
 import "./global.css";
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const theme = buildTheme(colorScheme as "light" | "dark");
+  const { paperTheme, navigationTheme } = useCustomAppTheme();
 
-  return (<PaperProvider theme={theme}>
-    {/* <StatusBar barStyle='dark-content' /> */}
-    <Stack>
-      <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-
-      <Stack.Screen name="+not-found" />
-    </Stack>
-  </PaperProvider>);
+  return (
+    <ThemeProvider value={navigationTheme}>
+      <PaperProvider theme={paperTheme}>
+        <Stack>
+          <Stack.Screen name="index" options={{ headerShown: false }} />
+          <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="+not-found" />
+        </Stack>
+      </PaperProvider>
+    </ThemeProvider>
+  );
 }

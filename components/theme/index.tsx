@@ -1,9 +1,8 @@
+import { ColorSchemeName } from "react-native";
 import { MD3DarkTheme, MD3LightTheme } from "react-native-paper";
 import { themeConfig } from "./theme-config";
 
-type Mode = "light" | "dark";
-
-export const buildTheme = (mode: Mode) => {
+export const buildTheme = (mode: ColorSchemeName) => {
   const base = mode === "dark" ? MD3DarkTheme : MD3LightTheme;
   const isDark = mode === "dark";
 
