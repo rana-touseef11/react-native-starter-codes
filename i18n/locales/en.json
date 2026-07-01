@@ -1,0 +1,30 @@
+{
+  "auth": {
+    "common": {
+      "Login": "Login",
+      "Sign_Up": "Sign Up",
+      "Email": "Email",
+      "Password": "Password"
+    },
+    "welcome": {
+      "Skip": "Skip",
+      "title": "Welcome To {{name}}"
+    },
+    "login": {
+      "title": "Please sign in here",
+      "Account?": "Already have an Account?"
+    },
+    "register": {
+      "title": "Please sign up here",
+      "First_Name": "First Name",
+      "Last_Name": "Last Name",
+      "Phone": "Phone",
+      "City": "City",
+      "State": "State",
+      "Country": "Country",
+      "Post_Code": "Post_Code",
+      "Address": "Address",
+      "Account?": "Don't have an Account?"
+    }
+  }
+}
